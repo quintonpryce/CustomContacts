@@ -15,6 +15,9 @@
 		97054CEC23F3717200B66EE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97054CEA23F3717200B66EE0 /* LaunchScreen.storyboard */; };
 		97054CF723F3717200B66EE0 /* CustomContactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97054CF623F3717200B66EE0 /* CustomContactsTests.swift */; };
 		97054D0223F3717200B66EE0 /* CustomContactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97054D0123F3717200B66EE0 /* CustomContactsUITests.swift */; };
+		AE98A3CE23F372E100A7C39E /* CNContactManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE98A3CD23F372E100A7C39E /* CNContactManager.swift */; };
+		AE98A3D023F372F300A7C39E /* CNContactManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE98A3CF23F372F300A7C39E /* CNContactManaging.swift */; };
+		AE98A3D223F3783A00A7C39E /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE98A3D123F3783A00A7C39E /* Mocks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		97054CFD23F3717200B66EE0 /* CustomContactsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomContactsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		97054D0123F3717200B66EE0 /* CustomContactsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomContactsUITests.swift; sourceTree = "<group>"; };
 		97054D0323F3717200B66EE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE98A3CD23F372E100A7C39E /* CNContactManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNContactManager.swift; sourceTree = "<group>"; };
+		AE98A3CF23F372F300A7C39E /* CNContactManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNContactManaging.swift; sourceTree = "<group>"; };
+		AE98A3D123F3783A00A7C39E /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,9 @@
 				97054CDF23F3716D00B66EE0 /* AppDelegate.swift */,
 				97054CE123F3716D00B66EE0 /* SceneDelegate.swift */,
 				97054CE323F3716D00B66EE0 /* ViewController.swift */,
+				AE98A3CD23F372E100A7C39E /* CNContactManager.swift */,
+				AE98A3CF23F372F300A7C39E /* CNContactManaging.swift */,
+				AE98A3D123F3783A00A7C39E /* Mocks.swift */,
 				97054CE523F3716D00B66EE0 /* Main.storyboard */,
 				97054CE823F3717200B66EE0 /* Assets.xcassets */,
 				97054CEA23F3717200B66EE0 /* LaunchScreen.storyboard */,
@@ -260,8 +269,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				97054CE423F3716D00B66EE0 /* ViewController.swift in Sources */,
+				AE98A3CE23F372E100A7C39E /* CNContactManager.swift in Sources */,
+				AE98A3D023F372F300A7C39E /* CNContactManaging.swift in Sources */,
 				97054CE023F3716D00B66EE0 /* AppDelegate.swift in Sources */,
 				97054CE223F3716D00B66EE0 /* SceneDelegate.swift in Sources */,
+				AE98A3D223F3783A00A7C39E /* Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
