@@ -105,6 +105,8 @@
 		97054CDE23F3716D00B66EE0 /* CustomContacts */ = {
 			isa = PBXGroup;
 			children = (
+				AE98A3D423F3795C00A7C39E /* Contact UI */,
+				AE98A3D323F3794500A7C39E /* Contact Manager */,
 				97054CDF23F3716D00B66EE0 /* AppDelegate.swift */,
 				97054CE123F3716D00B66EE0 /* SceneDelegate.swift */,
 				97054CE323F3716D00B66EE0 /* ViewController.swift */,
@@ -135,6 +137,20 @@
 				97054D0323F3717200B66EE0 /* Info.plist */,
 			);
 			path = CustomContactsUITests;
+			sourceTree = "<group>";
+		};
+		AE98A3D323F3794500A7C39E /* Contact Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Contact Manager";
+			sourceTree = "<group>";
+		};
+		AE98A3D423F3795C00A7C39E /* Contact UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Contact UI";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
