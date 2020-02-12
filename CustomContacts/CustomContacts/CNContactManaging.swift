@@ -25,7 +25,7 @@ protocol ContactManaging {
     func save()
     func delete()
 
-    init(cnContact: CNContact)
+    init(cnContact: CNContact?)
 }
 
 protocol ContactViewController {
