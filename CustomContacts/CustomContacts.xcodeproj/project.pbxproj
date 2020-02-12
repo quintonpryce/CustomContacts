@@ -110,7 +110,6 @@
 				97054CDF23F3716D00B66EE0 /* AppDelegate.swift */,
 				97054CE123F3716D00B66EE0 /* SceneDelegate.swift */,
 				97054CE323F3716D00B66EE0 /* ViewController.swift */,
-				AE98A3CD23F372E100A7C39E /* CNContactManager.swift */,
 				AE98A3CF23F372F300A7C39E /* CNContactManaging.swift */,
 				AE98A3D123F3783A00A7C39E /* Mocks.swift */,
 				97054CE523F3716D00B66EE0 /* Main.storyboard */,
@@ -142,6 +141,7 @@
 		AE98A3D323F3794500A7C39E /* Contact Manager */ = {
 			isa = PBXGroup;
 			children = (
+				AE98A3CD23F372E100A7C39E /* CNContactManager.swift */,
 			);
 			path = "Contact Manager";
 			sourceTree = "<group>";

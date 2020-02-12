@@ -11,13 +11,13 @@ import Contacts
 
 struct Contact {
     struct PhoneNumber {
-        var label: String
-        var number: String
+        var label: String = ""
+        var number: String = ""
     }
-    var firstName: String?
-    var lastName: String?
-    var numbers: [PhoneNumber]
-    var email: [String]?
+    var firstName: String = ""
+    var lastName: String = ""
+    var numbers: [PhoneNumber] = []
+    var emails: [String] = []
 }
 
 protocol ContactManaging {
