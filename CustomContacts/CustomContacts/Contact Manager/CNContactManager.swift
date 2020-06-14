@@ -6,15 +6,14 @@
 //  Copyright © 2020 TN. All rights reserved.
 //
 
-import Foundation
 import Contacts
+import Foundation
 
 class ContactManager: ContactManaging {
-
     // MARK: - Properties
 
     var contact: Contact
-    
+
     private var mutableContact: CNMutableContact
     private let store = CNContactStore()
 
@@ -23,20 +22,20 @@ class ContactManager: ContactManaging {
     // MARK: - Initializers
 
     required init(cnContact: CNContact? = nil) {
-        isNewContact = cnContact == nil
-        mutableContact = CNContact.mutable(copyOf: cnContact)
-        contact = Contact(cnContact: cnContact)
+        self.isNewContact = cnContact == nil
+        self.mutableContact = CNContact.mutable(copyOf: cnContact)
+        self.contact = Contact(cnContact: cnContact)
     }
 
     // MARK: - Methods
-    
+
     /// Updates and saves the `CNMutableContact` with the values from the user facing `Contact` struct.
     func save() {
         mutableContact.update(with: contact)
 
         let saveRequest = CNSaveRequest()
 
-        isNewContact ? saveRequest.add(mutableContact, toContainerWithIdentifier:nil) :
+        isNewContact ? saveRequest.add(mutableContact, toContainerWithIdentifier: nil) :
             saveRequest.update(mutableContact)
 
         try? store.execute(saveRequest)
@@ -54,7 +53,7 @@ class ContactManager: ContactManaging {
 
 // MARK: - `CNContact` Mutability Initializer
 
-extension CNContact {
+private extension CNContact {
     static func mutable(copyOf contact: CNContact?) -> CNMutableContact {
         (contact?.mutableCopy() as? CNMutableContact) ?? CNMutableContact()
     }
@@ -74,9 +73,10 @@ private extension Contact {
         cnContact.emailAddresses.forEach { email in
             emails.append(email.value as String)
         }
-        
+
         cnContact.phoneNumbers.forEach { number in
-            let phoneNumber = Contact.PhoneNumber(label: number.label ?? "", number: number.value.stringValue)
+            let label = CNLabeledValue<CNPhoneNumber>.localizedString(forLabel: number.label ?? "")
+            let phoneNumber = Contact.PhoneNumber(label: label, number: number.value.stringValue)
             numbers.append(phoneNumber)
         }
     }

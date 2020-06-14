@@ -1,4 +1,6 @@
 //
+import Contacts
+import Foundation
 //  CNContactManaging.swift
 //  CustomContacts
 //
@@ -6,14 +8,13 @@
 //  Copyright © 2020 TN. All rights reserved.
 //
 import UIKit
-import Foundation
-import Contacts
 
 struct Contact {
     struct PhoneNumber {
         var label: String = ""
         var number: String = ""
     }
+
     var firstName: String = ""
     var lastName: String = ""
     var numbers: [PhoneNumber] = []
