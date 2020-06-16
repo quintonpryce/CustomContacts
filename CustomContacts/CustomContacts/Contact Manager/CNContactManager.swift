@@ -62,7 +62,9 @@ private extension CNContact {
 // MARK: - `Contact` Initializer with `CNContact`
 
 private extension Contact {
-    init(cnContact: CNContact?) {
+    convenience init(cnContact: CNContact?) {
+        self.init()
+
         guard let cnContact = cnContact else { return }
 
         firstName = cnContact.givenName
@@ -70,14 +72,16 @@ private extension Contact {
         emails = []
         numbers = []
 
-        cnContact.emailAddresses.forEach { email in
-            emails.append(email.value as String)
+        cnContact.emailAddresses.forEach { emailAddress in
+            let label = CNLabeledValue<NSString>.localizedString(forLabel: emailAddress.label ?? "")
+            let email = Contact.LabeledValue(label: label, value: emailAddress.value as String)
+            emails.append(email)
         }
 
-        cnContact.phoneNumbers.forEach { number in
-            let label = CNLabeledValue<CNPhoneNumber>.localizedString(forLabel: number.label ?? "")
-            let phoneNumber = Contact.PhoneNumber(label: label, number: number.value.stringValue)
-            numbers.append(phoneNumber)
+        cnContact.phoneNumbers.forEach { phoneNumber in
+            let label = CNLabeledValue<CNPhoneNumber>.localizedString(forLabel: phoneNumber.label ?? "")
+            let number = Contact.LabeledValue(label: label, value: phoneNumber.value.stringValue)
+            numbers.append(number)
         }
     }
 }
@@ -92,11 +96,11 @@ private extension CNMutableContact {
         phoneNumbers = []
 
         contact.emails.forEach { email in
-            emailAddresses.append(CNLabeledValue(label: "email", value: email as NSString))
+            emailAddresses.append(CNLabeledValue<NSString>(label: email.label, value: email.value as NSString))
         }
 
         contact.numbers.forEach { number in
-            let cnPhoneNumber = CNPhoneNumber(stringValue: number.number)
+            let cnPhoneNumber = CNPhoneNumber(stringValue: number.value)
             phoneNumbers.append(CNLabeledValue(label: number.label, value: cnPhoneNumber))
         }
     }

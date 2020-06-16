@@ -11,6 +11,7 @@ import Foundation
 struct ContactSectionData {
     let title: String
     let detail: String
+    let didUpdate: (String) -> Void
 }
 
 struct ContactViewData {
@@ -19,21 +20,21 @@ struct ContactViewData {
 
     init(contact: Contact) {
         let nameSection = [
-            ContactSectionData(title: "First name", detail: contact.firstName),
-            ContactSectionData(title: "Last name", detail: contact.lastName)
+            ContactSectionData(title: "First name", detail: contact.firstName) { contact.firstName = $0 },
+            ContactSectionData(title: "Last name", detail: contact.lastName) { contact.lastName = $0 }
         ]
 
-        let phoneNumbersSection = contact.numbers.map { phoneNumber -> ContactSectionData in
-            ContactSectionData(title: phoneNumber.label, detail: phoneNumber.number)
+        let numberSection = contact.numbers.map { number -> ContactSectionData in
+            ContactSectionData(title: number.label, detail: number.value) { number.value = $0 }
         }
 
         let emailsSection = contact.emails.map { email -> ContactSectionData in
-            ContactSectionData(title: "", detail: email)
+            ContactSectionData(title: email.label, detail: email.value) { email.value = $0 }
         }
 
         data = [
             nameSection,
-            phoneNumbersSection,
+            numberSection,
             emailsSection
         ]
 

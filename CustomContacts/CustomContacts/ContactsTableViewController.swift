@@ -12,12 +12,14 @@ import UIKit
 class ContactsTableViewController: UITableViewController {
     let accessor = ContactsAccessor()
 
-    lazy var contacts: [CNContact] = {
-        accessor.contacts
-    }()
+    lazy var contacts: [CNContact] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        contacts = accessor.contacts
     }
 
     // MARK: - Table view data source

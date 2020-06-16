@@ -72,6 +72,9 @@
                                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <action selector="didEndEditingTextField" destination="bSX-Wj-9Jt" eventType="editingDidEnd" id="DWy-aY-mAL"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                     <constraints>

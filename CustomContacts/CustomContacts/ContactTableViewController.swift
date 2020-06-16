@@ -26,6 +26,10 @@ class ContactTableViewController: UITableViewController {
         super.viewDidLoad()
     }
 
+    deinit {
+        contactManager.save()
+    }
+
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -50,14 +54,15 @@ class ContactTableViewController: UITableViewController {
         cell.titleLabel.text = contact.title
         cell.textField.text = contact.detail
 
+        cell.didUpdate = contact.didUpdate
+
         return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("didSelect")
     }
 
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-
+        contactManager.save()
     }
 }

@@ -8,9 +8,15 @@
 
 import UIKit
 
+protocol ContactValueTableViewCellDelegate: AnyObject {
+    func didUpdate(_ value: String)
+}
+
 class ContactValueTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var textField: UITextField!
+
+    var didUpdate: ((String) -> Void)?
 
     var keyboardType: UIKeyboardType {
         get { textField.keyboardType }
@@ -27,5 +33,9 @@ class ContactValueTableViewCell: UITableViewCell, UITextFieldDelegate {
         if selected {
             textField.becomeFirstResponder()
         }
+    }
+
+    @IBAction func didEndEditingTextField() {
+        didUpdate?(textField.text ?? "")
     }
 }
